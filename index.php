@@ -1,8 +1,11 @@
 <!-- header -->
 <?php
+// mulai session
 session_start();
 
+// jika user sudah login
 if (isset($_SESSION["login"])) {
+    // kembalikan ke halaman admin
     header('Location:admin');
     exit;
 }
@@ -10,11 +13,15 @@ if (isset($_SESSION["login"])) {
 require('controls\controls.php');
 //cek apakah tombol submit sudah diklik
 if (isset($_POST["submit"])) {
+    // jika sudah diklik
     // jalankan fungsi login
     if (login($_POST) > 0) {
+        // jika login berhasil jalankan session login
         $_SESSION["login"] = true;
+        // arahkan user ke halaman admin
         header('Location:admin');
     } else {
+        // jika user gagal login tampilkan errorr
         $error = true;
     }
 }
