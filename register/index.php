@@ -1,6 +1,6 @@
 <!-- header -->
 <?php
-require('../controls/controls.php');
+require('../functions/functions.php');
 // cek apakah tombol submit sudah di klik
 if (isset($_POST["submit"])) {
     // buat array untuk menampung error
@@ -33,6 +33,7 @@ if (isset($_POST["submit"])) {
             // jika registrasi berhasil tampilkan alert
             echo "<script>
             alert('Selamat Registrasi Berhasil');
+            document.location.href='../';
             </script>";
         } else {
             // jika gagal tampilkan error dari koneksi

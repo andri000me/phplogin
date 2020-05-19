@@ -10,7 +10,7 @@ if (isset($_SESSION["login"])) {
     exit;
 }
 
-require('controls\controls.php');
+require('functions/functions.php');
 //cek apakah tombol submit sudah diklik
 if (isset($_POST["submit"])) {
     // jika sudah diklik
